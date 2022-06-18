@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ZYL1ModelStoreContainer" CdmEntityContainer="ZYL1Entities">
+    <EntitySetMapping Name="Admins">
+      <EntityTypeMapping TypeName="ZYL1Model.Admin">
+        <MappingFragment StoreEntitySet="Admin">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Num" ColumnName="Num" />
+          <ScalarProperty Name="PassWord" ColumnName="PassWord" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cats">
+      <EntityTypeMapping TypeName="ZYL1Model.Cat">
+        <MappingFragment StoreEntitySet="Cat">
+          <ScalarProperty Name="CartID" ColumnName="CartID" />
+          <ScalarProperty Name="ConsumerId" ColumnName="ConsumerId" />
+          <ScalarProperty Name="GoodsId" ColumnName="GoodsId" />
+          <ScalarProperty Name="CarCount" ColumnName="CarCount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Consumer1">
+      <EntityTypeMapping TypeName="ZYL1Model.Consumer1">
+        <MappingFragment StoreEntitySet="Consumer1">
+          <ScalarProperty Name="ConsumerId" ColumnName="ConsumerId" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="PassWord" ColumnName="PassWord" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Money" ColumnName="Money" />
+          <ScalarProperty Name="Address1" ColumnName="Address1" />
+          <ScalarProperty Name="Address2" ColumnName="Address2" />
+          <ScalarProperty Name="Portrait" ColumnName="Portrait" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Goods">
+      <EntityTypeMapping TypeName="ZYL1Model.Good">
+        <MappingFragment StoreEntitySet="Goods">
+          <ScalarProperty Name="GoodsId" ColumnName="GoodsId" />
+          <ScalarProperty Name="GoodsName" ColumnName="GoodsName" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="NumCount" ColumnName="NumCount" />
+          <ScalarProperty Name="Src" ColumnName="Src" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Orders">
+      <EntityTypeMapping TypeName="ZYL1Model.Order">
+        <MappingFragment StoreEntitySet="Order">
+          <ScalarProperty Name="OrdersId" ColumnName="OrdersId" />
+          <ScalarProperty Name="ConsumerName" ColumnName="ConsumerName" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="GoodsName" ColumnName="GoodsName" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="Total" ColumnName="Total" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="BuyTime" ColumnName="BuyTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

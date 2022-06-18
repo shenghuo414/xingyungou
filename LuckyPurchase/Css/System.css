@@ -1,0 +1,39 @@
+﻿body {
+}
+h1{
+    text-align:center;
+    margin-top:20px;
+}
+.TextBox{
+    height:25px;
+}
+.btn{
+    text-align:center;  
+}
+.btn_text {
+    width: 100px;
+    height: 40px;
+    font-size: 1.1em;
+    background-color: green;
+    color: white;
+    border-radius: 20px;
+}
+#table_Addgoods {
+    width: 50%;
+    background-color: white;
+    border: 1px solid black;
+    height: 300px;
+    margin: auto;
+    margin-top: 20px;
+
+}
+.text {
+    float: right;
+
+}
+.btn_add {
+    height:24px;
+}
+.tr{
+    line-height:40px;
+}

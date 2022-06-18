@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ZYL1Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Admin">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Num" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="PassWord" Type="varchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Cat">
+    <Key>
+      <PropertyRef Name="CartID" />
+    </Key>
+    <Property Name="CartID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ConsumerId" Type="int" Nullable="false" />
+    <Property Name="GoodsId" Type="int" Nullable="false" />
+    <Property Name="CarCount" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Consumer1">
+    <Key>
+      <PropertyRef Name="ConsumerId" />
+    </Key>
+    <Property Name="ConsumerId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Phone" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="PassWord" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Money" Type="money" Nullable="false" />
+    <Property Name="Address1" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Address2" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Portrait" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Goods">
+    <Key>
+      <PropertyRef Name="GoodsId" />
+    </Key>
+    <Property Name="GoodsId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GoodsName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Type" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Price" Type="money" Nullable="false" />
+    <Property Name="NumCount" Type="int" Nullable="false" />
+    <Property Name="Src" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Order">
+    <Key>
+      <PropertyRef Name="OrdersId" />
+    </Key>
+    <Property Name="OrdersId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ConsumerName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Phone" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="GoodsName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Price" Type="money" Nullable="false" />
+    <Property Name="Quantity" Type="int" Nullable="false" />
+    <Property Name="Total" Type="money" Nullable="false" />
+    <Property Name="Address" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="BuyTime" Type="datetime" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Cat_Consumer1">
+    <End Role="Consumer1" Type="Self.Consumer1" Multiplicity="1" />
+    <End Role="Cat" Type="Self.Cat" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Consumer1">
+        <PropertyRef Name="ConsumerId" />
+      </Principal>
+      <Dependent Role="Cat">
+        <PropertyRef Name="ConsumerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Cat_Goods">
+    <End Role="Goods" Type="Self.Goods" Multiplicity="1" />
+    <End Role="Cat" Type="Self.Cat" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Goods">
+        <PropertyRef Name="GoodsId" />
+      </Principal>
+      <Dependent Role="Cat">
+        <PropertyRef Name="GoodsId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ZYL1ModelStoreContainer">
+    <EntitySet Name="Admin" EntityType="Self.Admin" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Cat" EntityType="Self.Cat" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Consumer1" EntityType="Self.Consumer1" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Goods" EntityType="Self.Goods" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Order" EntityType="Self.Order" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Cat_Consumer1" Association="Self.FK_Cat_Consumer1">
+      <End Role="Consumer1" EntitySet="Consumer1" />
+      <End Role="Cat" EntitySet="Cat" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Cat_Goods" Association="Self.FK_Cat_Goods">
+      <End Role="Goods" EntitySet="Goods" />
+      <End Role="Cat" EntitySet="Cat" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,648 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{AA2FBED7-0CD4-449D-98A2-21CE2814CE80}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LuckyPurchase</RootNamespace>
+    <AssemblyName>LuckyPurchase</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Css\Admin-index.css" />
+    <Content Include="Css\Admin.css" />
+    <Content Include="Css\Back.css" />
+    <Content Include="Css\bootstrap.min.css" />
+    <Content Include="Css\carts.css" />
+    <Content Include="Css\common.css" />
+    <Content Include="Css\component.css" />
+    <Content Include="Css\default.css" />
+    <Content Include="Css\font-awesome.min.css" />
+    <Content Include="Css\grstyle.css" />
+    <Content Include="Css\lightbox.min.css" />
+    <Content Include="Css\lrtk.css" />
+    <Content Include="Css\owl.carousel.css" />
+    <Content Include="Css\reset.css" />
+    <Content Include="Css\responsive.css" />
+    <Content Include="Css\shangpin.css" />
+    <Content Include="Css\solarized-light.css" />
+    <Content Include="Css\style.css" />
+    <Content Include="Css\System.css" />
+    <Content Include="font-awesome\css\font-awesome.min.css" />
+    <Content Include="font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="fonts\antonio-exotic\stylesheet.css" />
+    <Content Include="fonts\codropsicons\codropsicons.svg" />
+    <Content Include="fonts\codropsicons\license.txt" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
+    <Content Include="fonts\icomoon\icomoon.dev.svg" />
+    <Content Include="fonts\icomoon\icomoon.svg" />
+    <Content Include="fonts\icomoon\license.txt" />
+    <Content Include="Images\1.jpg" />
+    <Content Include="Images\2.jpg" />
+    <Content Include="Images\2.png" />
+    <Content Include="Images\3.jpg" />
+    <Content Include="Images\3.png" />
+    <Content Include="Images\4.png" />
+    <Content Include="Images\5.png" />
+    <Content Include="Images\a.png" />
+    <Content Include="Images\AC.png" />
+    <Content Include="Images\banner.jpg" />
+    <Content Include="Images\banner.png" />
+    <Content Include="Images\banner2.jpg" />
+    <Content Include="Images\banner2.png" />
+    <Content Include="Images\banner3.jpg" />
+    <Content Include="Images\banner3.png" />
+    <Content Include="Images\banner4.jpg" />
+    <Content Include="Images\banner4.png" />
+    <Content Include="Images\banner5.jpg" />
+    <Content Include="Images\blog-full.png" />
+    <Content Include="Images\blog1.png" />
+    <Content Include="Images\blog2.png" />
+    <Content Include="Images\category1.png" />
+    <Content Include="Images\category2.png" />
+    <Content Include="Images\category3.png" />
+    <Content Include="Images\category4.png" />
+    <Content Include="Images\chicken.gif" />
+    <Content Include="Images\client1.png" />
+    <Content Include="Images\client2.png" />
+    <Content Include="Images\client3.png" />
+    <Content Include="Images\client4.png" />
+    <Content Include="Images\close.png" />
+    <Content Include="Images\ewm.png" />
+    <Content Include="Images\gallery1-1.jpg" />
+    <Content Include="Images\gallery1.png" />
+    <Content Include="Images\gallery2-2.jpg" />
+    <Content Include="Images\gallery2.png" />
+    <Content Include="Images\gallery3-3.jpg" />
+    <Content Include="Images\gallery3.png" />
+    <Content Include="Images\gallery4-4.jpg" />
+    <Content Include="Images\gallery4.png" />
+    <Content Include="Images\gallery5-5.jpg" />
+    <Content Include="Images\gallery5.png" />
+    <Content Include="Images\gallery6-6.jpg" />
+    <Content Include="Images\gallery6.png" />
+    <Content Include="Images\gallery7-7.jpg" />
+    <Content Include="Images\gallery7.png" />
+    <Content Include="Images\gallery8-8.jpg" />
+    <Content Include="Images\gallery8.png" />
+    <Content Include="Images\gallery9-9.jpg" />
+    <Content Include="Images\Guide_10.jpg" />
+    <Content Include="Images\Guide_11.jpg" />
+    <Content Include="Images\ht.png" />
+    <Content Include="Images\huawei1.jpg" />
+    <Content Include="Images\huawei2.jpg" />
+    <Content Include="Images\huawei3.jpg" />
+    <Content Include="Images\huawei4.jpg" />
+    <Content Include="Images\huawei主页.jpg" />
+    <Content Include="Images\huawei保障.jpg" />
+    <Content Include="Images\huawei规格1.jpg" />
+    <Content Include="Images\huawei规格2.jpg" />
+    <Content Include="Images\huawei规格3.jpg" />
+    <Content Include="Images\huawei规格4.jpg" />
+    <Content Include="Images\icons\car.png" />
+    <Content Include="Images\icons\favicon.png" />
+    <Content Include="Images\icons\key.png" />
+    <Content Include="Images\icons\left-arrow-hover.png" />
+    <Content Include="Images\icons\left-arrow.png" />
+    <Content Include="Images\icons\left-quotes-sign.png" />
+    <Content Include="Images\icons\logo1.jpg" />
+    <Content Include="Images\icons\right-arrow-hover.png" />
+    <Content Include="Images\icons\right-arrow.png" />
+    <Content Include="Images\icons\right-quotes-symbol.png" />
+    <Content Include="Images\icons\user.png" />
+    <Content Include="Images\icons\wifi.png" />
+    <Content Include="Images\img\1.jpg" />
+    <Content Include="Images\img\background1.jpg" />
+    <Content Include="Images\img\bj.jpg" />
+    <Content Include="Images\img\bjbj.png" />
+    <Content Include="Images\img\logowz.png" />
+    <Content Include="Images\img\logo_bg.jpg" />
+    <Content Include="Images\img\mmm.png" />
+    <Content Include="Images\inner-banner.png" />
+    <Content Include="Images\IPhone.jpg" />
+    <Content Include="Images\iphone1.jpg" />
+    <Content Include="Images\iphone2.jpg" />
+    <Content Include="Images\iphone3.jpg" />
+    <Content Include="Images\iphone4.jpg" />
+    <Content Include="Images\iphone保障.jpg" />
+    <Content Include="Images\iphone转跳.jpg" />
+    <Content Include="Images\I`%28AHU5B6Z5R%40]J_T}%402S`U.png" />
+    <Content Include="Images\Jeep防晒衣皮肤衣男士户外UPF50+轻薄透气速干防晒服迷彩印花防泼水风衣男.jpg" />
+    <Content Include="Images\jianguo保障.jpg" />
+    <Content Include="Images\jianguo封面.png" />
+    <Content Include="Images\l02.png" />
+    <Content Include="Images\l04.png" />
+    <Content Include="Images\l05.png" />
+    <Content Include="Images\l06.png" />
+    <Content Include="Images\ll04.png" />
+    <Content Include="Images\ll05.png" />
+    <Content Include="Images\ll06.png" />
+    <Content Include="Images\loading.gif" />
+    <Content Include="Images\logo.jpg" />
+    <Content Include="Images\Logo.png" />
+    <Content Include="Images\mac1.png" />
+    <Content Include="Images\mac2.png" />
+    <Content Include="Images\mac3.png" />
+    <Content Include="Images\mac4.png" />
+    <Content Include="Images\mac详情.jpg" />
+    <Content Include="Images\mark1.png" />
+    <Content Include="Images\mayun.png" />
+    <Content Include="Images\meizu.PNG" />
+    <Content Include="Images\mht.png" />
+    <Content Include="Images\mht1.png" />
+    <Content Include="Images\mmm.png" />
+    <Content Include="Images\moto.jpg" />
+    <Content Include="Images\moto1.jpg" />
+    <Content Include="Images\moto2.jpg" />
+    <Content Include="Images\moto3.jpg" />
+    <Content Include="Images\moto保障.jpg" />
+    <Content Include="Images\my1.png" />
+    <Content Include="Images\next.png" />
+    <Content Include="Images\OPPOR178.jpg" />
+    <Content Include="Images\pingguo.jpg" />
+    <Content Include="Images\pp.PNG" />
+    <Content Include="Images\prev.png" />
+    <Content Include="Images\room1.png" />
+    <Content Include="Images\room2.png" />
+    <Content Include="Images\room3.png" />
+    <Content Include="Images\room4.png" />
+    <Content Include="Images\ry.jpg" />
+    <Content Include="Images\sc.gif" />
+    <Content Include="Images\shop.png" />
+    <Content Include="Images\spple.jpg" />
+    <Content Include="Images\ss.png" />
+    <Content Include="Images\vacation-banner.png" />
+    <Content Include="Images\weixin.jpg" />
+    <Content Include="Images\wsc.png" />
+    <Content Include="Images\wsc1.png" />
+    <Content Include="Images\xiaomi主页.jpg" />
+    <Content Include="Images\xs.png" />
+    <Content Include="Images\yijia.png" />
+    <Content Include="Images\zy1.png" />
+    <Content Include="Images\一加6T6.png" />
+    <Content Include="Images\一加6T7.jpg" />
+    <Content Include="Images\华为转跳.jpg" />
+    <Content Include="Images\博之轮（BOZLUN%29时尚智能手表.png" />
+    <Content Include="Images\四叶草项链.png" />
+    <Content Include="Images\外星人.png" />
+    <Content Include="Images\外星人1.png" />
+    <Content Include="Images\外星人2.png" />
+    <Content Include="Images\外星人3.png" />
+    <Content Include="Images\外星人4.png" />
+    <Content Include="Images\外星人详情1.jpg" />
+    <Content Include="Images\外星人详情2.jpg" />
+    <Content Include="Images\外星人详情3.jpg" />
+    <Content Include="Images\外星人详情4.jpg" />
+    <Content Include="Images\宝洛雷希.png" />
+    <Content Include="Images\小米1.jpg" />
+    <Content Include="Images\小米12转跳.jpg" />
+    <Content Include="Images\小米2.jpg" />
+    <Content Include="Images\小米3.jpg" />
+    <Content Include="Images\小米4.jpg" />
+    <Content Include="Images\小米保障.jpg" />
+    <Content Include="Images\小米详情1.jpg" />
+    <Content Include="Images\小米详情2.jpg" />
+    <Content Include="Images\小米详情3.jpg" />
+    <Content Include="Images\小米详情4.jpg" />
+    <Content Include="Images\手机.jpg" />
+    <Content Include="Images\手机1.jpg" />
+    <Content Include="Images\手机2.png" />
+    <Content Include="Images\摩托1.png" />
+    <Content Include="Images\摩托2.png" />
+    <Content Include="Images\摩托3.png" />
+    <Content Include="Images\摩托4.png" />
+    <Content Include="Images\摩托罗拉转跳.jpg" />
+    <Content Include="Images\施华洛世奇.png" />
+    <Content Include="Images\时尚银饰.png" />
+    <Content Include="Images\稿定抠图.png" />
+    <Content Include="Images\联系我们.png" />
+    <Content Include="Images\联系方式.jpg" />
+    <Content Include="Images\苹果2.jpg" />
+    <Content Include="Images\苹果3.jpg" />
+    <Content Include="Images\苹果4.jpg" />
+    <Content Include="Images\苹果5.jpg" />
+    <Content Include="Images\苹果mac.png" />
+    <Content Include="Images\轮播.jpg" />
+    <Content Include="Images\韩酷森（HOONKOSE）轻奢品牌防嗮衣男.jpg" />
+    <Content Include="Images\魅族TH.jpg" />
+    <Content Include="Js\bootstrap.min.js" />
+    <Content Include="Js\carts.js" />
+    <Content Include="Js\classie.js" />
+    <Content Include="Js\common.js" />
+    <Content Include="Js\custom.js" />
+    <Content Include="Js\instafeed.min.js" />
+    <Content Include="Js\jiekou.js" />
+    <Content Include="Js\jquery-1.12.4.min.js" />
+    <Content Include="Js\jquery-1.7.2.js" />
+    <Content Include="Js\jquery-ui.min.js" />
+    <Content Include="Js\jquery.imagesloaded.js" />
+    <Content Include="Js\jquery.min.js" />
+    <Content Include="Js\lightbox-plus-jquery.min.js" />
+    <Content Include="Js\masonry.pkgd.min.js" />
+    <Content Include="Js\modernizr-3.3.1.min.js" />
+    <Content Include="Js\modernizr.custom.js" />
+    <Content Include="Js\uisearch.js" />
+    <Content Include="Js\Verification.js" />
+    <Content Include="Js\zySearch.js" />
+    <Content Include="Pages\abount.aspx" />
+    <Content Include="Pages\Admin-Addgoods.aspx" />
+    <Content Include="Pages\Admin.aspx" />
+    <Content Include="Pages\Backstage.aspx" />
+    <Content Include="Pages\Center.aspx" />
+    <Content Include="Pages\contact.aspx" />
+    <Content Include="Pages\index.aspx" />
+    <Content Include="Pages\Login.aspx" />
+    <Content Include="Pages\Luck.aspx" />
+    <Content Include="Pages\NewbieGuide.aspx" />
+    <Content Include="Pages\ShoppingCart.aspx" />
+    <Content Include="Pages\registered.aspx" />
+    <Content Include="Pages\System.aspx" />
+    <Content Include="Pages\Commodity.aspx" />
+    <Content Include="Pages\Default.aspx" />
+    <Content Include="Pages\Admin-Index.aspx" />
+    <Content Include="shop\t1.jpg" />
+    <Content Include="shop\t10.jpg" />
+    <Content Include="shop\t11.jpg" />
+    <Content Include="shop\t12.jpg" />
+    <Content Include="shop\t13.jpg" />
+    <Content Include="shop\t14.jpg" />
+    <Content Include="shop\t15.jpg" />
+    <Content Include="shop\t16.jpg" />
+    <Content Include="shop\t17.jpg" />
+    <Content Include="shop\t18.jpg" />
+    <Content Include="shop\t19.jpg" />
+    <Content Include="shop\t2.jpg" />
+    <Content Include="shop\t20.jpg" />
+    <Content Include="shop\t21.jpg" />
+    <Content Include="shop\t22.jpg" />
+    <Content Include="shop\t23.jpg" />
+    <Content Include="shop\t24.jpg" />
+    <Content Include="shop\t25.jpg" />
+    <Content Include="shop\t26.jpg" />
+    <Content Include="shop\t27.jpg" />
+    <Content Include="shop\t28.jpg" />
+    <Content Include="shop\t29.jpg" />
+    <Content Include="shop\t3.jpg" />
+    <Content Include="shop\t4.jpg" />
+    <Content Include="shop\t5.jpg" />
+    <Content Include="shop\t6.jpg" />
+    <Content Include="shop\t7.jpg" />
+    <Content Include="shop\t8.jpg" />
+    <Content Include="shop\t9.jpg" />
+    <Content Include="shop\坚果R1封.png" />
+    <Content Include="Web.config" />
+    <Content Include="商品详情页\css\normalize.css" />
+    <Content Include="商品详情页\huawei.aspx" />
+    <Content Include="商品详情页\images\4.jpg" />
+    <Content Include="商品详情页\images\a1.png" />
+    <Content Include="商品详情页\images\a2.png" />
+    <Content Include="商品详情页\images\a3.png" />
+    <Content Include="商品详情页\images\a4.png" />
+    <Content Include="商品详情页\images\apple1.jpg" />
+    <Content Include="商品详情页\images\apple2.jpg" />
+    <Content Include="商品详情页\images\apple3.jpg" />
+    <Content Include="商品详情页\images\fod.png" />
+    <Content Include="商品详情页\images\hdy_07.png" />
+    <Content Include="商品详情页\images\hdy_09.png" />
+    <Content Include="商品详情页\images\hdy_11.jpg" />
+    <Content Include="商品详情页\images\ho_03.png" />
+    <Content Include="商品详情页\images\ho_07.png" />
+    <Content Include="商品详情页\images\ho_11.jpg" />
+    <Content Include="商品详情页\images\ht.png" />
+    <Content Include="商品详情页\images\ko-1.jpg" />
+    <Content Include="商品详情页\images\ko-2.jpg" />
+    <Content Include="商品详情页\images\ko.jpg" />
+    <Content Include="商品详情页\images\list_03.jpg" />
+    <Content Include="商品详情页\images\list_10.jpg" />
+    <Content Include="商品详情页\images\me.png" />
+    <Content Include="商品详情页\images\phon.png" />
+    <Content Include="商品详情页\images\qq.png" />
+    <Content Include="商品详情页\images\sh1.jpg" />
+    <Content Include="商品详情页\images\shop-line.png" />
+    <Content Include="商品详情页\images\shop.png" />
+    <Content Include="商品详情页\images\staar.png" />
+    <Content Include="商品详情页\IPhone.aspx" />
+    <Content Include="商品详情页\js\common.js" />
+    <Content Include="商品详情页\js\jquery-1.9.1.min.js" />
+    <Content Include="商品详情页\moto.aspx" />
+    <Content Include="商品详情页\xiaomi.aspx" />
+    <Content Include="商品详情页\外星人.aspx" />
+    <Content Include="商品详情页\苹果电脑.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Master\Site1.Master.cs">
+      <DependentUpon>Site1.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Master\Site1.Master.designer.cs">
+      <DependentUpon>Site1.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\abount.aspx.cs">
+      <DependentUpon>abount.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\abount.aspx.designer.cs">
+      <DependentUpon>abount.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Admin-Addgoods.aspx.cs">
+      <DependentUpon>Admin-Addgoods.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Admin-Addgoods.aspx.designer.cs">
+      <DependentUpon>Admin-Addgoods.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Admin.aspx.cs">
+      <DependentUpon>Admin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Admin.aspx.designer.cs">
+      <DependentUpon>Admin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Backstage.aspx.cs">
+      <DependentUpon>Backstage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Backstage.aspx.designer.cs">
+      <DependentUpon>Backstage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Center.aspx.cs">
+      <DependentUpon>Center.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Center.aspx.designer.cs">
+      <DependentUpon>Center.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\contact.aspx.cs">
+      <DependentUpon>contact.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\contact.aspx.designer.cs">
+      <DependentUpon>contact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Luck.aspx.cs">
+      <DependentUpon>Luck.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Luck.aspx.designer.cs">
+      <DependentUpon>Luck.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\NewbieGuide.aspx.cs">
+      <DependentUpon>NewbieGuide.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\NewbieGuide.aspx.designer.cs">
+      <DependentUpon>NewbieGuide.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ShoppingCart.aspx.cs">
+      <DependentUpon>ShoppingCart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\ShoppingCart.aspx.designer.cs">
+      <DependentUpon>ShoppingCart.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\registered.aspx.cs">
+      <DependentUpon>registered.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\registered.aspx.designer.cs">
+      <DependentUpon>registered.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\System.aspx.cs">
+      <DependentUpon>System.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\System.aspx.designer.cs">
+      <DependentUpon>System.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Commodity.aspx.cs">
+      <DependentUpon>Commodity.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Commodity.aspx.designer.cs">
+      <DependentUpon>Commodity.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Admin-Index.aspx.cs">
+      <DependentUpon>Admin-Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Admin-Index.aspx.designer.cs">
+      <DependentUpon>Admin-Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="商品详情页\huawei.aspx.cs">
+      <DependentUpon>huawei.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="商品详情页\huawei.aspx.designer.cs">
+      <DependentUpon>huawei.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="商品详情页\IPhone.aspx.cs">
+      <DependentUpon>IPhone.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="商品详情页\IPhone.aspx.designer.cs">
+      <DependentUpon>IPhone.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="商品详情页\moto.aspx.cs">
+      <DependentUpon>moto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="商品详情页\moto.aspx.designer.cs">
+      <DependentUpon>moto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="商品详情页\xiaomi.aspx.cs">
+      <DependentUpon>xiaomi.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="商品详情页\xiaomi.aspx.designer.cs">
+      <DependentUpon>xiaomi.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="商品详情页\外星人.aspx.cs">
+      <DependentUpon>外星人.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="商品详情页\外星人.aspx.designer.cs">
+      <DependentUpon>外星人.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="商品详情页\苹果电脑.aspx.cs">
+      <DependentUpon>苹果电脑.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="商品详情页\苹果电脑.aspx.designer.cs">
+      <DependentUpon>苹果电脑.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Master\Site1.Master" />
+    <Content Include="font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="font-awesome\fonts\fontawesome-webfont.woff2" />
+    <Content Include="font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="fonts\antonio-exotic\antonio-bold-webfont.woff" />
+    <Content Include="fonts\antonio-exotic\antonio-bold-webfont.woff2" />
+    <Content Include="fonts\antonio-exotic\antonio-light-webfont.woff" />
+    <Content Include="fonts\antonio-exotic\antonio-light-webfont.woff2" />
+    <Content Include="fonts\antonio-exotic\antonio-regular-webfont.woff" />
+    <Content Include="fonts\antonio-exotic\antonio-regular-webfont.woff2" />
+    <Content Include="fonts\antonio-exotic\exotic_350_demi-bold_bt-webfont.woff" />
+    <Content Include="fonts\antonio-exotic\exotic_350_demi-bold_bt-webfont.woff2" />
+    <Content Include="fonts\antonio-exotic\ufonts.com_exotic-350-bold-bt-webfont.woff" />
+    <Content Include="fonts\antonio-exotic\ufonts.com_exotic-350-bold-bt-webfont.woff2" />
+    <Content Include="fonts\codropsicons\.DS_Store" />
+    <Content Include="fonts\codropsicons\codropsicons.eot" />
+    <Content Include="fonts\codropsicons\codropsicons.ttf" />
+    <Content Include="fonts\codropsicons\codropsicons.woff" />
+    <Content Include="fonts\icomoon\icomoon.eot" />
+    <Content Include="fonts\icomoon\icomoon.ttf" />
+    <Content Include="fonts\icomoon\icomoon.woff" />
+    <None Include="packages.config" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <Content Include="Web.sitemap" />
+    <Content Include="商品详情页\.project" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\BLL\BLL.csproj">
+      <Project>{63dbe248-fff7-4c18-a2d3-a73689c1c0d1}</Project>
+      <Name>BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Models\Models.csproj">
+      <Project>{11f06fce-6c00-4761-a7ee-c21eec551847}</Project>
+      <Name>Models</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>58066</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:58066/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>这台计算机上缺少此项目引用的 NuGet 程序包。使用“NuGet 程序包还原”可下载这些程序包。有关更多信息，请参见 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的文件是 {0}。</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

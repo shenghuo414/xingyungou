@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ZYL1Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Admin">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Num" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PassWord" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Cat">
+    <Key>
+      <PropertyRef Name="CartID" />
+    </Key>
+    <Property Name="CartID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ConsumerId" Type="Int32" Nullable="false" />
+    <Property Name="GoodsId" Type="Int32" Nullable="false" />
+    <Property Name="CarCount" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Consumer1" Relationship="Self.FK_Cat_Consumer1" FromRole="Cat" ToRole="Consumer1" />
+    <NavigationProperty Name="Good" Relationship="Self.FK_Cat_Goods" FromRole="Cat" ToRole="Goods" />
+  </EntityType>
+  <EntityType Name="Consumer1">
+    <Key>
+      <PropertyRef Name="ConsumerId" />
+    </Key>
+    <Property Name="ConsumerId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PassWord" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Money" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="Address1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Address2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Portrait" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Cats" Relationship="Self.FK_Cat_Consumer1" FromRole="Consumer1" ToRole="Cat" />
+  </EntityType>
+  <EntityType Name="Good">
+    <Key>
+      <PropertyRef Name="GoodsId" />
+    </Key>
+    <Property Name="GoodsId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="GoodsName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Price" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="NumCount" Type="Int32" Nullable="false" />
+    <Property Name="Src" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Cats" Relationship="Self.FK_Cat_Goods" FromRole="Goods" ToRole="Cat" />
+  </EntityType>
+  <EntityType Name="Order">
+    <Key>
+      <PropertyRef Name="OrdersId" />
+    </Key>
+    <Property Name="OrdersId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ConsumerName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="GoodsName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Price" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="Quantity" Type="Int32" Nullable="false" />
+    <Property Name="Total" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="BuyTime" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <Association Name="FK_Cat_Consumer1">
+    <End Role="Consumer1" Type="Self.Consumer1" Multiplicity="1" />
+    <End Role="Cat" Type="Self.Cat" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Consumer1">
+        <PropertyRef Name="ConsumerId" />
+      </Principal>
+      <Dependent Role="Cat">
+        <PropertyRef Name="ConsumerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Cat_Goods">
+    <End Role="Goods" Type="Self.Good" Multiplicity="1" />
+    <End Role="Cat" Type="Self.Cat" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Goods">
+        <PropertyRef Name="GoodsId" />
+      </Principal>
+      <Dependent Role="Cat">
+        <PropertyRef Name="GoodsId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ZYL1Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Admins" EntityType="Self.Admin" />
+    <EntitySet Name="Cats" EntityType="Self.Cat" />
+    <EntitySet Name="Consumer1" EntityType="Self.Consumer1" />
+    <EntitySet Name="Goods" EntityType="Self.Good" />
+    <EntitySet Name="Orders" EntityType="Self.Order" />
+    <AssociationSet Name="FK_Cat_Consumer1" Association="Self.FK_Cat_Consumer1">
+      <End Role="Consumer1" EntitySet="Consumer1" />
+      <End Role="Cat" EntitySet="Cats" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Cat_Goods" Association="Self.FK_Cat_Goods">
+      <End Role="Goods" EntitySet="Goods" />
+      <End Role="Cat" EntitySet="Cats" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
